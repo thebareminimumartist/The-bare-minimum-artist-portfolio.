@@ -6,14 +6,6 @@
   <meta name="description" content="3D Artist Portfolio — environments, props, game art and visual development." />
   <title>Daniel Azuka — 3D Artist Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    // Set the theme before first paint so there's no flash of the wrong theme.
-    (function () {
-      var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-    })();
-  </script>
 </head>
 
 <body>
@@ -33,15 +25,6 @@
 
     <div class="header-actions">
       <a class="header-cta" href="#contact">Let's work together <span class="arrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19L19 5M9 5h10v10" /></svg></span></a>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.2" />
-          <path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" />
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M20 14.2A8.2 8.2 0 1 1 9.8 4a6.5 6.5 0 0 0 10.2 10.2Z" />
-        </svg>
-      </button>
     </div>
   </header>
 
@@ -92,7 +75,8 @@
         <span>ENVIRONMENT ART</span><i>✦</i>
         <span>PROP ART</span><i>✦</i>
         <span>GAME ASSETS</span><i>✦</i>
-        <span>BLENDER</span>
+        <span>BLENDER</span><i>✦</i>
+        <span>VISUAL DEVELOPMENT</span><i>✦</i>
       </div>
     </section>
 
@@ -512,31 +496,5 @@
     <span>3D ARTIST / ENVIRONMENT / PROPS</span>
     <a href="#top">Back to top ↑</a>
   </footer>
-
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var toggle = document.getElementById('themeToggle');
-      if (!toggle) return;
-
-      function isDark() {
-        return root.getAttribute('data-theme') === 'dark';
-      }
-
-      toggle.setAttribute('aria-pressed', String(isDark()));
-
-      toggle.addEventListener('click', function () {
-        var goingDark = !isDark();
-        if (goingDark) {
-          root.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          root.removeAttribute('data-theme');
-          localStorage.setItem('theme', 'light');
-        }
-        toggle.setAttribute('aria-pressed', String(goingDark));
-      });
-    })();
-  </script>
 </body>
 </html>
