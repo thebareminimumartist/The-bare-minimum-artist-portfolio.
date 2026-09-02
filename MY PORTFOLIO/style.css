@@ -928,15 +928,24 @@ a { color: inherit; text-decoration: none; }
     width: 100%;
     min-width: 0;
     justify-content: center;
-    gap: clamp(8px, 2.6vw, 14px);
-    padding: 12px 8px;
-    font-size: clamp(7px, 2.2vw, 9px);
-    letter-spacing: .055em;
+    gap: 7px;
+    padding: 11px 4px;
+    font-size: clamp(6.2px, 2.0vw, 8px);
+    letter-spacing: .025em;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .ticker-inner span,
+  .ticker-inner i {
+    flex: 0 1 auto;
+    min-width: 0;
     white-space: nowrap;
   }
 
   .ticker-inner i {
-    flex-shrink: 0;
+    flex-shrink: 1;
   }
 
   .section-heading {
@@ -1352,8 +1361,10 @@ a { color: inherit; text-decoration: none; }
   }
 
   .ticker-inner {
-    gap: 18px;
-    padding-left: 16px;
-    padding-right: 16px;
+    gap: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 6.5px;
+    letter-spacing: .02em;
   }
 }
