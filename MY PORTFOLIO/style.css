@@ -1108,26 +1108,52 @@ a { color: inherit; text-decoration: none; }
     display: none;
   }
 
-  /* The masonry pattern intentionally becomes a simple vertical gallery on phones. */
-  .masonry-card,
-  .masonry-card.tall,
-  .masonry-card.wide {
-    grid-column: auto;
-    grid-row: auto;
-    height: auto;
+  /* Keep the desktop masonry composition on phones.
+     Normal = 1x1, tall = 1x2, wide = 2x1.
+     Images fill their frames so there are no blank bands. */
+  .masonry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(150px, 42vw);
+    gap: 12px;
+    grid-auto-flow: dense;
+  }
+
+  .masonry-card {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-width: 0;
     min-height: 0;
     background: var(--img-bg);
   }
 
+  .masonry-card.tall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .masonry-card.wide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
   .masonry-card img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     object-position: center;
   }
 
   .masonry-overlay {
-    padding: 16px;
+    padding: 14px;
+  }
+
+  .masonry-overlay strong {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .masonry-overlay span {
+    font-size: 8px;
   }
 
   .client-row {
