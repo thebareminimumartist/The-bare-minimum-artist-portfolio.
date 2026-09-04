@@ -1218,8 +1218,8 @@ a { color: inherit; text-decoration: none; }
   }
 
   .about-photo img {
-    width: 100%;
-    height: auto;
+    width: 70%;
+    height: 470px;
     object-fit: contain;
   }
 
